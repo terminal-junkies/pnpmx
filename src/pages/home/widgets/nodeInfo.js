@@ -20,7 +20,7 @@ module.exports = function (screen) {
 
   const info = {
     node: '',
-    npm: '',
+    pnpm: '',
   };
 
   exec('node -v', (err, stdout) => {
@@ -28,15 +28,15 @@ module.exports = function (screen) {
     render();
   });
 
-  exec('npm -v', (err, stdout) => {
-    info.npm = stdout;
+  exec('pnpm -v', (err, stdout) => {
+    info.pnpm = stdout;
     render();
   });
 
   function render() {
     box.setContent(`
   {bold}node:{/} ${info.node}
-  {bold}npm:{/} ${info.npm}
+  {bold}pnpm:{/} ${info.pnpm}
   `);
     screen.render();
   }

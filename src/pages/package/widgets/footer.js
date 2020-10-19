@@ -59,21 +59,21 @@ module.exports = function (screen, pkg) {
       install: {
         keys: ['i'],
         callback: function () {
-          const command = `npm install --save ${packageName}`;
+          const command = `pnpm add ${packageName}`;
           runCommand(command);
         },
       },
       'install-global': {
         keys: ['l'],
         callback: function () {
-          const command = `npm install -g ${packageName}`;
+          const command = `pnpm add -g ${packageName}`;
           runCommand(command);
         },
       },
       'install-dev': {
         keys: ['d'],
         callback: function () {
-          const command = `npm install --save-dev ${packageName}`;
+          const command = `pnpm add -D ${packageName}`;
           runCommand(command);
         },
       },

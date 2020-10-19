@@ -8,7 +8,7 @@ module.exports = function (screen) {
 
   const bigtext = blessed.bigtext({
     parent: screen,
-    content: 'npmx',
+    content: 'pnpmx',
     top: '10%+1',
     left: '35%+1',
     width: '65%',
