@@ -1,0 +1,73 @@
+{
+  "name": "@terminal-junkies/pnpmx",
+  "version": "1.0.0",
+  "description": "An advanced CLI for pnpm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "deploy": "git push && git push --tags && npm publish"
+  },
+  "bin": {
+    "pnpmx": "bin/pnpmx.js"
+  },
+  "keywords": [
+    "pnpm",
+    "pnpm cli",
+    "pnpmx",
+    "cli",
+    "terminal"
+  ],
+  "author": "Rajasegar Chandran <rajasegar.c@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/terminal-junkies/npmx",
+  "dependencies": {
+    "@blessed/blessed-contrib": "^1.0.1",
+    "@blessed/neo-blessed": "^1.0.0",
+    "@octokit/rest": "^18.0.6",
+    "blessed-themes": "^1.1.0",
+    "common-tags": "^1.8.0",
+    "filesize": "^6.1.0",
+    "github-readme": "^1.0.0",
+    "libnpm": "^3.0.1",
+    "module-alias": "^2.2.2",
+    "npm-expansions": "^2.2.5"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "prettier": "^2.1.2",
+    "semantic-release": "^17.2.1"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json",
+            "CHANGELOG.md"
+          ],
+          "message": "release(version): Release ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ],
+      "@semantic-release/github"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
