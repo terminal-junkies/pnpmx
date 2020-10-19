@@ -2,38 +2,12 @@
 
 const blessed = require('@blessed/neo-blessed');
 const getTheme = require('@utils/getTheme');
+const runCommand = require('@utils/runCommand');
 
 module.exports = function (screen, pkg) {
   const packageName = pkg.name;
   const theme = getTheme();
 
-  function runCommand(cmd) {
-    const {
-      terminal: { border, style },
-    } = theme;
-    const terminal = blessed.terminal({
-      parent: screen,
-      top: 'center',
-      left: 'center',
-      width: '50%',
-      height: '50%',
-      border,
-      style,
-      label: cmd,
-      fullUnicode: true,
-      screenKeys: false,
-      cwd: process.env.PWD,
-    });
-    screen.append(terminal);
-    screen.render();
-    terminal.focus();
-
-    terminal.key('escape', function () {
-      terminal.detach();
-    });
-
-    terminal.pty.write(`${cmd}\r\n`);
-  }
   const footer = blessed.listbar({
     parent: screen,
     bottom: 0,
@@ -60,21 +34,21 @@ module.exports = function (screen, pkg) {
         keys: ['i'],
         callback: function () {
           const command = `pnpm add ${packageName}`;
-          runCommand(command);
+          runCommand(screen, command);
         },
       },
       'install-global': {
         keys: ['l'],
         callback: function () {
           const command = `pnpm add -g ${packageName}`;
-          runCommand(command);
+          runCommand(screen, command);
         },
       },
       'install-dev': {
         keys: ['d'],
         callback: function () {
           const command = `pnpm add -D ${packageName}`;
-          runCommand(command);
+          runCommand(screen, command);
         },
       },
     },

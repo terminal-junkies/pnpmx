@@ -20,7 +20,7 @@
   ],
   "author": "Rajasegar Chandran <rajasegar.c@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/terminal-junkies/npmx",
+  "repository": "https://github.com/terminal-junkies/pnpmx",
   "dependencies": {
     "@blessed/blessed-contrib": "^1.0.1",
     "@blessed/neo-blessed": "^1.0.0",
