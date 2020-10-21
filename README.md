@@ -39,7 +39,8 @@ The Default theme used is `Dracula`. The config file will be automatically creat
 
 ## Screenshots
 
-[![asciicast](https://asciinema.org/a/7ajz46JAVDVR9nV5ZMwhLLzAT.svg)](https://asciinema.org/a/7ajz46JAVDVR9nV5ZMwhLLzAT)
+[![asciicast](https://asciinema.org/a/zAFc8pUihLZHgrf71aJtyLvRa.svg)](https://asciinema.org/a/zAFc8pUihLZHgrf71aJtyLvRa)
+
 
 ### Home
 ![home page](screenshots/home.png)
