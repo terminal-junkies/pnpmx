@@ -53,6 +53,8 @@ The Default theme used is `Dracula`. The config file will be automatically creat
 ### Package
 ![package page](screenshots/package.png)
 
+### Install Package
+![install package](screenshots/install.png)
 ## FAQS
 
 ### How do I quit this thing?
