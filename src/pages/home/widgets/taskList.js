@@ -27,7 +27,7 @@ module.exports = function (screen) {
 
   taskList.on('select', (node) => {
     const { content } = node;
-    const cmd = `npm run ${content}`;
+    const cmd = `pnpm run ${content}`;
     runCommand(screen, cmd);
   });
 

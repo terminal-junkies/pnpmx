@@ -13,7 +13,7 @@ module.exports = function (screen) {
     width: 'half',
     top: 'center',
     left: 'center',
-    label: ' {blue-fg}Prompt{/blue-fg} ',
+    label: ' {blue-fg}Install package:{/blue-fg} ',
     tags: true,
     keys: true,
     vi: true,

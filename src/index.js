@@ -38,7 +38,7 @@ module.exports = function () {
     return Math.floor(Math.random() * Math.floor(expansions.length));
   }
   const logoContent = stripIndents`{bold}pnpmx ${pkg.version}{/}
-  {red-fg}❤{/} ${expansions[getRandomInt()]}
+  {red-fg}❤{/} Performant ${expansions[getRandomInt()]}
   `;
 
   logo.setContent(logoContent);
